@@ -1,0 +1,12 @@
+@keyframes textChange {
+  0% {
+    opacity: 0.5;
+    color: $color-light;
+    font-size: 180px;
+  }
+  100% {
+    opacity: 1;
+    color: $color-primary;
+    font-size: 120px;
+  }
+}

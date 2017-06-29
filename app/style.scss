@@ -1,0 +1,118 @@
+$font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+$color-primary: #00695c;
+$color-warn:#ff3d00;
+$color-light:#ffffff;
+$color-dark:#000000;
+$color-background:#fafafa;
+
+$grid-size: 90vw;
+$grid-size-max: 600px;
+$toolbar-height: 64px;
+
+@import 'mixins';
+@import 'animations';
+
+
+
+body {
+  font: 100% $font-family;
+  padding: 0;
+  margin: 0;
+  background-color: $color-background;
+}
+* {
+  box-sizing: border-box;
+}
+
+
+
+#toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .toolbar-row {
+    height: $toolbar-height;
+    margin: 8px auto;
+    display: flex;
+    flex: 1;
+    width: 100%;
+  }
+}
+
+#action-button {
+  margin: 8px auto;
+  height: auto;
+  width: $grid-size/3;
+  max-width: $grid-size-max/3;
+  background-color: transparent;
+  border: 2px solid;
+  border-radius: 2px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  &.button-warn {
+    color: $color-warn;
+    border-color: $color-warn;
+    &:active {
+      background-color: $color-warn;
+      color: $color-light;
+    }
+  }
+  &.button-primary {
+    color: $color-primary;
+    border-color: $color-primary;
+    &:active {
+      background-color: $color-primary;
+      color: $color-light;
+    }
+  }
+}
+
+div#grid-container {
+  margin: 8px;
+}
+
+div#grid {
+  width: $grid-size;
+  height: $grid-size;
+  max-width: $grid-size-max;
+  max-height: $grid-size-max;
+  margin: auto;
+  cursor: pointer;
+  .row {
+    margin: auto;
+    display: flex;
+  }
+}
+
+div.cell {
+  width: $grid-size/3;
+  height: $grid-size/3;
+  max-width: $grid-size-max/3;
+  max-height: $grid-size-max/3;
+  float: left;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $color-dark;
+  display: flex;
+  align-items: center;
+  .cell-text {
+    width: 100%;
+    text-align: center;
+    font-size: 120px;
+    font-weight: 100;
+    color: $color-primary;
+    animation: textChange 250ms ease;
+    @include no-select;
+  }
+}
+
+
+
+#message {
+  text-align: center;
+  color: $color-primary;
+  margin: 0 auto;
+  line-height: $toolbar-height;
+  font-weight: 300;
+}
