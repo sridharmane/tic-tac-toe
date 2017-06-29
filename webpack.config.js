@@ -16,7 +16,7 @@ var entrypoint = process.env.npm_lifecycle_event === 'dev' ?
 module.exports = {
   entry: entrypoint,
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/docs',
     filename: 'bundle.js'
   },
   module: {
